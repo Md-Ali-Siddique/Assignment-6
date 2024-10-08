@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peddy - Pet Adoption</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@1.19.0/dist/full.css" rel="stylesheet">
+</head>
+<body class="bg-white text-black">
+
+  <nav class="bg-white shadow-md p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Peddy</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#" class="text-gray-700">Home</a></li>
+        <li><a href="#" class="text-gray-700">About</a></li>
+        <li><a href="#" class="text-gray-700">Contact</a></li>
+      </ul>
+      <div class="avatar">
+        <div class="ring-primary ring-offset-base-100 w-16 rounded-full">
+          <img src="images/OIP (1).jpeg" />
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="text-white text-center flex justify-center items-center pt-14">
+    <div class="lg:w-[70%] flex flex-col justify-center items-center">
+      <h2 class="text-4xl md:text-6xl font-bold text-black">Your Path to Adoption <br> Starts Here</h2>
+      <p class="mt-5 text-black text-xl">It is a long-established fact that a reader will be captivated by the joy of finding a companion <br> as they explore loving pets for adoption.</p>
+      <a href="#adopt-section" class="mt-6 px-4 py-2 bg-[#0E7A81] text-white rounded-lg hover:bg-white hover:text-[#0E7A81] hover:border">View More</a>
+      <img src="images/pet.webp" alt="">
+    </div>
+  </section>
+
+  <section id="adopt-section" class="container mx-auto py-8">
+    <div class="flex space-x-4 mt-6  gap-10 justify-center items-center mb-8" id="Category-btn"></div>
+    <div id="pets-container"></div>
+
+    <div class="flex justify-between items-center mx-6">
+      <div>
+        <h2 class="text-2xl font-bold">Best Deals for You</h2>
+      </div>
+      <button onclick="sortByPrice()" class="bg-[#0E7A81] rounded-lg text-white px-5 py-3">Sort by Price</button>
+    </div>
+
+    <div class="md:flex md:space-x-8 mt-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 h-max lg:grid-cols-3 gap-4 w-full" id="pets-grid"></div>
+
+
+      
+<div id="no-pets-message" class="hidden text-center flex flex-col justify-center items-center bg-gray-200 w-full p-12 lg:max-h-96 h-full lg:m-0 mb-40">
+  <img src="images/error.webp" alt="" class="mx-auto mb-4" />
+  <p class="text-3xl font-bold text-black ">No Information Available</p>
+</div>
+
+<div id="liked-pets" class="w-full lg:w-[40%] p-2 pr-6 border fixed bottom-0 left-0 bg-white shadow-lg z-10 overflow-y-auto min-h-[48px] max-h-[200px] sm:fixed sm:bottom-0 md:fixed md:bottom-0 md:w-full lg:static lg:mt-0 lg:min-h-0 lg:max-h-none">
+    <div class="grid grid-cols-4 gap-4">
+    
+    </div>
+</div>
+
+      
+      
+
+  </section>
+
+<input type="checkbox" id="details-modal" class="modal-toggle" />
+<div class="modal min-h-screen flex justify-center items-center">
+  <div class="modal-box relative bg-white flex justify-center items-center flex-col">
+    <img id="modal-pet-image" src="" alt="Pet" class="h-48 w-full object-cover rounded-lg">
+    <h3 id="modal-pet_name" class="text-2xl font-bold mt-4"></h3>
+    <p id="modal-pet-details" class="mt-2"></p>
+    <button onclick="closeDetailsModal()" class="mt-4 bg-green-800 w-48 text-white rounded-lg px-4 py-2">Close</button>
+  </div>
+</div>
+
+<input type="checkbox" id="adopt-modal" class="modal-toggle"/>
+<div class="modal min-h-screen flex justify-center items-center">
+  <div class="modal-box relative bg-white flex flex-col justify-center items-center p-4 gap-4">
+    <h1 class="text-4xl font-bold">Congratulations</h1>
+    <img src="images/Handshake-Emoji.png" class="w-28" alt="">
+    <h1 class="text-7xl text-green-700" id="adopt-countdown">3</h1>
+    <h3 id="adopt-message" class="text-xl font-bold"></h3>
+  </div>
+</div>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
